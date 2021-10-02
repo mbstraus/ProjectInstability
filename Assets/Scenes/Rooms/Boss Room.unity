@@ -2244,6 +2244,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2001528574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2001528576}
+  - component: {fileID: 2001528575}
+  m_Layer: 0
+  m_Name: Random Ceiling Collapse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2001528575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001528574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bf4e68369b6e9c4eae944320b071cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnRangeMinX: -8
+  SpawnRangeMaxX: 8
+  SpawnRangeMinY: -4
+  SpawnRangeMaxY: 4
+  SpawnCooldown: 15
+  TimeBetweenZoneIncrease: 30
+  ZonesToAddPerIncrease: 1
+  CeilingCollapsePrefab: {fileID: 7976055837832974339, guid: 5e32584a0a6394146b4acf4ee41bec6f, type: 3}
+--- !u!4 &2001528576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001528574}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &986756347549455104
 PrefabInstance:
   m_ObjectHideFlags: 0
