@@ -6,6 +6,8 @@ public class LineAttackMarker : MonoBehaviour
 {
     private Animator animator;
     private PlayerStatus collidingObject;
+    [SerializeField]
+    private FlameWallAttackAnimation AttackAnimationPrefab;
 
     private void Awake() {
         animator = GetComponent<Animator>();
@@ -20,6 +22,7 @@ public class LineAttackMarker : MonoBehaviour
             collidingObject.TakeDamage(1);
         }
         gameObject.SetActive(false);
+        Instantiate(AttackAnimationPrefab, gameObject.transform.parent);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

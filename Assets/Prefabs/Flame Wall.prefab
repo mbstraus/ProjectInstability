@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flameWallLineCooldownMinSec: 10
   flameWallLineCooldownMaxSec: 15
-  timeBetweenLineSegments: 1
+  timeBetweenLineSegments: 0.5
 --- !u!1001 &1836769881277460890
 PrefabInstance:
   m_ObjectHideFlags: 0

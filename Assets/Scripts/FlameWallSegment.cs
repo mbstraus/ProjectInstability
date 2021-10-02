@@ -12,14 +12,17 @@ public class FlameWallSegment : MonoBehaviour
 
     private bool isAttacking = false;
     private float timeToNextAttack = 0f;
+    private Animator animator;
 
     void Awake() {
         IsActive = true;
+        animator = GetComponent<Animator>();
     }
 
     void Update() {
         if (HitPoints <= 0) {
             IsActive = false;
+            animator.SetBool("Is Doused", true);
         }
         if (IsActive && isAttacking) {
             if (timeToNextAttack <= 0f) {
