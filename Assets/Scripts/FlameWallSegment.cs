@@ -5,26 +5,31 @@ using UnityEngine;
 public class FlameWallSegment : MonoBehaviour
 {
     [SerializeField]
-    public int HitPoints = 1;
+    public int MaxHitPoints = 1;
     [SerializeField]
-    private LineAttackMarker lineAttackMarker;
-    public bool IsActive { get; set; }
+    public float HitPointHealCooldownSec = 5f;
+    [SerializeField]
+    public LineAttackMarker lineAttackMarker;
 
     private bool isAttacking = false;
     private float timeToNextAttack = 0f;
+    private float timeToHitPointHeal = 0f;
     private Animator animator;
+    private int HitPoints = 0;
 
     void Awake() {
-        IsActive = true;
         animator = GetComponent<Animator>();
+        HitPoints = MaxHitPoints;
+        timeToHitPointHeal = HitPointHealCooldownSec;
     }
 
     void Update() {
         if (HitPoints <= 0) {
-            IsActive = false;
             animator.SetBool("Is Doused", true);
+        } else {
+            animator.SetBool("Is Doused", false);
         }
-        if (IsActive && isAttacking) {
+        if (isAttacking) {
             if (timeToNextAttack <= 0f) {
                 lineAttackMarker.gameObject.SetActive(true);
                 isAttacking = false;
@@ -32,18 +37,23 @@ public class FlameWallSegment : MonoBehaviour
                 timeToNextAttack -= Time.deltaTime;
             }
         }
+        if (timeToHitPointHeal <= 0f) {
+            HitPoints = Mathf.Min(HitPoints + 1, MaxHitPoints);
+            timeToHitPointHeal = HitPointHealCooldownSec;
+        } else {
+            timeToHitPointHeal -= Time.deltaTime;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player Shot") && IsActive) {
-            HitPoints--;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player Shot")) {
+            HitPoints = Mathf.Max(HitPoints - 1, 0);
+            timeToHitPointHeal = HitPointHealCooldownSec;
         }
     }
 
     public void DoFlameWallLineAttack(float delay) {
-        if (IsActive) {
-            isAttacking = true;
-            timeToNextAttack = delay;
-        }
+        isAttacking = true;
+        timeToNextAttack = delay;
     }
 }

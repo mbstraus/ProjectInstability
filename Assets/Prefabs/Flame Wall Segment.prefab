@@ -144,7 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a040b585ade76b24eafe4906def7cbd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 1
+  MaxHitPoints: 10
+  HitPointHealCooldownSec: 15
   lineAttackMarker: {fileID: 2079325892442568394}
 --- !u!1001 &7188901583896212159
 PrefabInstance:
