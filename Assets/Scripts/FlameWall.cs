@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FlameWall : MonoBehaviour
 {
@@ -29,6 +28,18 @@ public class FlameWall : MonoBehaviour
             DoFlameWallLineAttack();
         } else {
             flameWallLineCooldownRemaining -= Time.deltaTime;
+        }
+
+        bool isFlamewallDead = true;
+        foreach (var segment in flameWallSegments) {
+            if (segment.HitPoints > 0) {
+                isFlamewallDead = false;
+                break;
+            }
+        }
+        if (isFlamewallDead) {
+            // Should probably do a fancy animation here or something, but meh.
+            SceneManager.LoadScene("Victory");
         }
     }
 

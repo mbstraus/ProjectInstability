@@ -15,7 +15,7 @@ public class FlameWallSegment : MonoBehaviour
     private float timeToNextAttack = 0f;
     private float timeToHitPointHeal = 0f;
     private Animator animator;
-    private int HitPoints = 0;
+    public int HitPoints = 99;
 
     void Awake() {
         animator = GetComponent<Animator>();

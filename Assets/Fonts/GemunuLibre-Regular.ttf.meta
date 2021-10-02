@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 8d449ef79a440cb498df31e90f022201
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Gemunu Libre
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1143d433974c5954e840a6254de23e88, type: 3}
+  - {fileID: 12800000, guid: a8dfb5f54b18af34aa90f5a5eadc93b3, type: 3}
+  - {fileID: 12800000, guid: b24dd934ec92dba41997457fb8d5e488, type: 3}
+  - {fileID: 12800000, guid: 2de52b3b5b90f5e4c8d17b79883f8d9e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

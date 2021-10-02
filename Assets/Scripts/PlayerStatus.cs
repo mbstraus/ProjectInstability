@@ -1,24 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerStatus : MonoBehaviour
 {
     [SerializeField]
     public int HitPoints = 3;
+    [SerializeField]
+    public TextMeshProUGUI HpIndicator;
 
-    void Start()
-    {
-        
+    void Start() {
+        HpIndicator.text = "HP: " + HitPoints;
     }
 
     void Update() {
         if (HitPoints <= 0) {
-            Debug.Log("PLAYER DIED!");
+            // I'm just going to put this in here for now, hopefully replace it with an animation
+            // but probably won't.
+            SceneManager.LoadScene("Game Over");
         }
     }
 
     public void TakeDamage(int damageAmount) {
         HitPoints -= damageAmount;
+        HpIndicator.text = "HP: " + HitPoints;
     }
 }
