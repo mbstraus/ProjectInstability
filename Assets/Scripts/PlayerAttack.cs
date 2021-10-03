@@ -9,9 +9,16 @@ public class PlayerAttack : MonoBehaviour
     public Transform ShotParent;
     [SerializeField]
     public float ShotCooldown = 0.1f;
+    [SerializeField]
+    public AudioClip AttackAudioClip;
 
+    private SfxManager sfxManager;
     private float shotCooldownRemaining = 0f;
     private Vector2 shotDirection = Vector2.zero;
+
+    private void Start() {
+        sfxManager = FindObjectOfType<SfxManager>();
+    }
 
     private void Update() { 
         if (shotCooldownRemaining > 0f) {
@@ -20,6 +27,7 @@ public class PlayerAttack : MonoBehaviour
             Shot shot = Instantiate(ShotPrefab, transform.position, Quaternion.identity, ShotParent);
             shot.SetShotDirection(shotDirection);
             shotCooldownRemaining = ShotCooldown;
+            sfxManager.PlayEffect(AttackAudioClip);
         }
     }
 

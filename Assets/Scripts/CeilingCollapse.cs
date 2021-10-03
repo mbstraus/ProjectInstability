@@ -8,9 +8,14 @@ public class CeilingCollapse : MonoBehaviour
     private PlayerStatus collidingObject;
     [SerializeField]
     public CeilingCollapseAnimation AttackAnimationPrefab;
+    [SerializeField]
+    private AudioClip AttackClip;
+
+    private SfxManager sfxManager;
 
     void Start() {
         animator = GetComponent<Animator>();
+        sfxManager = FindObjectOfType<SfxManager>();
     }
 
     // Update is called once per frame
@@ -24,6 +29,7 @@ public class CeilingCollapse : MonoBehaviour
             collidingObject.TakeDamage(1);
         }
         Instantiate(AttackAnimationPrefab, transform.position, Quaternion.identity);
+        sfxManager.PlayEffect(AttackClip);
         Destroy(gameObject);
     }
 

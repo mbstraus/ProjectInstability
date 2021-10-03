@@ -8,9 +8,14 @@ public class LineAttackMarker : MonoBehaviour
     private PlayerStatus collidingObject;
     [SerializeField]
     private FlameWallAttackAnimation AttackAnimationPrefab;
+    [SerializeField]
+    private AudioClip AttackClip;
+
+    private SfxManager sfxManager;
 
     private void Awake() {
         animator = GetComponent<Animator>();
+        sfxManager = FindObjectOfType<SfxManager>();
     }
 
     private void OnEnable() {
@@ -23,6 +28,7 @@ public class LineAttackMarker : MonoBehaviour
         }
         gameObject.SetActive(false);
         Instantiate(AttackAnimationPrefab, gameObject.transform.parent);
+        sfxManager.PlayEffect(AttackClip);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

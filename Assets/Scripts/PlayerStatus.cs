@@ -8,9 +8,14 @@ public class PlayerStatus : MonoBehaviour
     public int HitPoints = 3;
     [SerializeField]
     public TextMeshProUGUI HpIndicator;
+    [SerializeField]
+    public AudioClip TakeDamageAudioClip;
+
+    private SfxManager sfxManager;
 
     void Start() {
         HpIndicator.text = "HP: " + HitPoints;
+        sfxManager = FindObjectOfType<SfxManager>();
     }
 
     void Update() {
@@ -24,5 +29,6 @@ public class PlayerStatus : MonoBehaviour
     public void TakeDamage(int damageAmount) {
         HitPoints -= damageAmount;
         HpIndicator.text = "HP: " + HitPoints;
+        sfxManager.PlayEffect(TakeDamageAudioClip);
     }
 }

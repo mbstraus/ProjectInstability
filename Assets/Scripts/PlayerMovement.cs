@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool IsCharacterMoving = false;
     private Vector2 MovementVector = Vector2.zero;
     private Rigidbody2D rb;
 
@@ -20,10 +19,5 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(InputAction.CallbackContext callbackContext) {
         MovementVector = callbackContext.ReadValue<Vector2>();
-        if (MovementVector == Vector2.zero) {
-            IsCharacterMoving = false;
-        } else {
-            IsCharacterMoving = true;
-        }
     }
 }

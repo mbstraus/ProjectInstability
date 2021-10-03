@@ -271,6 +271,7 @@ MonoBehaviour:
   ShotPrefab: {fileID: 7669359690257401172, guid: 9b461b4fe07f6194a8cbe9d36b176feb, type: 3}
   ShotParent: {fileID: 0}
   ShotCooldown: 0.6
+  AttackAudioClip: {fileID: 8300000, guid: eed698223bc377f4f8e820cc17cf7bdc, type: 3}
 --- !u!114 &986756348417843242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitPoints: 3
+  HpIndicator: {fileID: 0}
+  TakeDamageAudioClip: {fileID: 8300000, guid: fb960150dba106f42af0f36bdfc44512, type: 3}
 --- !u!95 &7692650734198462072
 Animator:
   serializedVersion: 3

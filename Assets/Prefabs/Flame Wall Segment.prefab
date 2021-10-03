@@ -147,6 +147,9 @@ MonoBehaviour:
   MaxHitPoints: 10
   HitPointHealCooldownSec: 15
   lineAttackMarker: {fileID: 2079325892442568394}
+  DouseClip: {fileID: 8300000, guid: d5e0122cb69f7d84ba35858dd4ade560, type: 3}
+  RekindleClip: {fileID: 8300000, guid: 790029b15c99b5040854fd1e098bff77, type: 3}
+  HitPoints: 99
 --- !u!1001 &7188901583896212159
 PrefabInstance:
   m_ObjectHideFlags: 0

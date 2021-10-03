@@ -16,13 +16,17 @@ public class TipsPanel : MonoBehaviour
     };
     private int CurrentTip = 0;
 
+    private SfxManager sfxManager;
     [SerializeField]
     public TextMeshProUGUI TipsText;
+    [SerializeField]
+    public AudioClip MenuBoopClip;
 
     // Start is called before the first frame update
     void Start()
     {
         TipsText.text = Tips[CurrentTip];
+        sfxManager = FindObjectOfType<SfxManager>();
     }
 
     // Update is called once per frame
@@ -37,6 +41,7 @@ public class TipsPanel : MonoBehaviour
             CurrentTip = 0;
         }
         TipsText.text = Tips[CurrentTip];
+        sfxManager.PlayEffect(MenuBoopClip);
     }
 
     public void PreviousTip() {
@@ -45,5 +50,6 @@ public class TipsPanel : MonoBehaviour
             CurrentTip = Tips.Length - 1;
         }
         TipsText.text = Tips[CurrentTip];
+        sfxManager.PlayEffect(MenuBoopClip);
     }
 }

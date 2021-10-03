@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackAnimationPrefab: {fileID: 7913922107673707186, guid: b932813e59df66740a499b0989923645, type: 3}
+  AttackClip: {fileID: 8300000, guid: e19432c5d58d44f4caeae1f9e2e6eb07, type: 3}
 --- !u!61 &5613142917610932925
 BoxCollider2D:
   m_ObjectHideFlags: 0
