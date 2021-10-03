@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - Player Shot
+  - Flame Wall
+  - Damage Indicator
+  - Attack Animation
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Map
+    uniqueID: 1638489787
+    locked: 0
+  - name: Markers
+    uniqueID: 2300148601
+    locked: 0
+  - name: Actors
+    uniqueID: 719118877
+    locked: 0
+  - name: Shots
+    uniqueID: 2427170897
+    locked: 0
